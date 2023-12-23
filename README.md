@@ -16,3 +16,4 @@ Following is the link to the dashboard I created that summarizes all that we lea
 After proper evaluation, we can conclude that SVM proved to be the best-suited model for our dataset. This tells us that we have a clear margin of separation in between the classes. Also, SVM is more effective with high-dimensional data and small datasets.
 
 ![cra ss1](https://github.com/nishita02/Cardiolytics/assets/117457277/2a3c622a-8b0a-4934-a6f9-90a139a7bc6f)  &nbsp; ![cra ss2](https://github.com/nishita02/Cardiolytics/assets/117457277/f87038a9-7e89-4003-a48c-bff30d660f2b)
+![cra ss3](https://github.com/nishita02/Cardiolytics/assets/117457277/3b17e52f-8627-4cce-9efc-9a9d0d6a7a70)
