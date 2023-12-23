@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiac Risk Assessment Result</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            margin-top: -50px;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h3 {            
+            color: #4CAF50;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0c08f1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <h1>Cardiac Risk Assessment Result</h1>  
+
+        <h3>{{prediction_result}}</h3>  <br>
+
+        <a href="{{url_for('index')}}"><<= Try once more</a>        
+
+    </div>
+</body>
+</html>
+
+

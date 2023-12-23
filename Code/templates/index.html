@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiac Risk Assessment</title>               
+    <!-- the above will be title of the tab when you click the url-->
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            /* align items to the centre */
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        form {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            font-weight: bold;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        form input {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div>
+
+        <h1>Cardiac Risk Assessment</h1>
+
+        <!-- values = ['age', 'sex', 'cp', ,'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal'] -->
+
+        <form action = "{{url_for('predict_func')}}" method = 'post'>
+        <!-- can also write action = '/predict', which is the url for predict_func function-->
+
+            <label for = 'age'>Age</label>
+            <input type = 'text' name = 'age' ></input><br></br>
+            <!-- input tag also has an attribute called placeholder -->
+            
+            <label for = 'sex'>Gender</label>
+            <input type = 'text' name = 'sex' placeholder="(0:female, 1:male)"></input><br></br>
+
+            <label for = 'cp'>Chest pain type</label>
+            <input type = 'text' name = 'cp' placeholder="(0 to 4)"></input><br></br>
+
+            <label for = 'trestbps'>Resting blood pressure</label>
+            <input type = 'text' name = 'trestbps' ></input><br></br>
+
+            <label for = 'chol'>Serum cholestrol</label>
+            <input type = 'text' name = 'chol' placeholder="(mg/dl)"></input><br></br>
+
+            <label for = 'fbs'>Fasting blood sugar</label>
+            <input type = 'text' name = 'fbs' placeholder="(mg/dl)" ></input><br></br>
+
+            <label for = 'restecg'>Resting electrocardiographic results</label>
+            <input type = 'text' name = 'restecg' placeholder="(values 0,1,2)"></input><br></br>
+
+            <label for = 'thalach'>Maximum heart rate achieved</label>
+            <input type = 'text' name = 'thalach' ></input><br></br>
+
+            <label for = 'exang'>Exercise induced angina</label>
+            <input type = 'text' name = 'exang' ></input><br></br>
+
+            <label for = 'oldpeak'>ST depression induced by exercise relative to rest</label>
+            <input type = 'text' name = 'oldpeak' ></input><br></br>
+
+            <label for = 'slope'>The slope of the peak exercise ST segment</label>
+            <input type = 'text' name = 'slope' > </input><br></br>
+
+            <label for = 'ca'>Number of major vessels colored by fluoroscopy</label>
+            <input type = 'text' name = 'ca' placeholder="(0-3)"></input><br></br>
+
+            <label for = 'thal'>Thal</label>
+            <input type = 'text' name = 'thal' placeholder="0 = normal; 1 = fixed defect; 2 = reversible defect"></input><br></br>
+
+            <button type = 'submit'>Predict</button>
+        </form>
+        
+        <br>
+
+    </div>
+</body>
+</html>
+
+

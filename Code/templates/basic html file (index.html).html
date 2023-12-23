@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiac Risk Assessment</title>               
+    <!-- the above will be title of the tab when you click the url-->
+
+</head>
+
+<body>
+    <div>
+
+        <h1>Cardiac Risk Assessment</h1>
+
+        <!-- values = ['age', 'sex', 'cp', ,'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal'] -->
+
+        <form action = "{{url_for('predict_func')}}" method = 'post'>
+        <!-- can also write action = '/predict', which is the url for predict_func function-->
+
+            <label for = 'age'>Age</label>
+            <input type = 'number' name = 'age' ></input><br></br>
+            <!-- input tag also has an attribute called placeholder -->
+            
+            <label for = 'sex'>Gender</label>
+            <input type = 'number' name = 'sex' placeholder="(0:female, 1:male)"></input><br></br>
+
+            <label for = 'cp'>Chest pain type</label>
+            <input type = 'number' name = 'cp' placeholder="(0 to 4)"></input><br></br>
+
+            <label for = 'trestbps'>Resting blood pressure</label>
+            <input type = 'number' name = 'trestbps' ></input><br></br>
+
+            <label for = 'chol'>Serum cholestrol</label>
+            <input type = 'number' name = 'chol' placeholder="(mg/dl)"></input><br></br>
+
+            <label for = 'fbs'>Fasting blood sugar</label>
+            <input type = 'number' name = 'fbs' placeholder="(mg/dl)"></input><br></br>
+
+            <label for = 'restecg'>Resting electrocardiographic results</label>
+            <input type = 'number' name = 'restecg' placeholder="(values 0,1,2)"></input><br></br>
+
+            <label for = 'thalach'>Maximum heart rate achieved</label>
+            <input type = 'number' name = 'thalach' ></input><br></br>
+
+            <label for = 'exang'>Exercise induced angina</label>
+            <input type = 'number' name = 'exang' ></input><br></br>
+
+            <label for = 'oldpeak'>ST depression induced by exercise relative to rest</label>
+            <input type = 'number' name = 'oldpeak' ></input><br></br>
+
+            <label for = 'slope'>The slope of the peak exercise ST segment</label>
+            <input type = 'number' name = 'slope' > </input><br></br>
+
+            <label for = 'ca'>Number of major vessels colored by fluoroscopy</label>
+            <input type = 'number' name = 'ca' placeholder="(0-3)"></input><br></br>
+
+            <label for = 'thal'>Thal</label>
+            <input type = 'number' name = 'thal' placeholder="0 = normal; 1 = fixed defect; 2 = reversible defect"></input><br></br>
+
+            <button type = 'submit'>Predict</button>
+        </form>
+
+        {% if prediction_result %}
+            <h3>{{prediction_result}}</h3>
+        {% endif %}
+
+    </div>
+</body>
+</html>
+
+
